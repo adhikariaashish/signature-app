@@ -68,6 +68,9 @@ color:white ;
 }
 
 @media (max-width: 768px) {
+    *{
+        font-family: poppins;
+    }
     .container {
         padding: 15px;
         margin: 50px;
@@ -82,23 +85,23 @@ color:white ;
         font-size: 1.2rem;
     }
     canvas {
-        /* height: 15vh; */
         width: 90%;
     }
 }
 
 @media (max-width: 480px) {
+    *{
+        font-family: poppins;
+    }
     .container {
         padding: 15px;
         margin: 50px;
     }
-
     button {
         margin: 8px 3px;
         padding: 6px 12px;
         font-size: 12px;
     }
-
     .error-message {
         font-size: 1rem;
     }
