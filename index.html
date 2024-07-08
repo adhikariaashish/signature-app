@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signature Web App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Draw Your eSignature</h1>
         <canvas id="signature-pad" width="600" height="200"></canvas>
+        <div class="controls">
+            <label for="colorPicker">Pen Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+            <label for="penSize">Pen Size:</label>
+            <input type="range" id="penSize" min="1" max="10" value="2">
+        </div>
         <div id="error-message" class="error-message"></div>
         <div class="buttons">
             <button id="clear">Clear</button>
