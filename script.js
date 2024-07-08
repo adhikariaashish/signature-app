@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const downloadButton = document.getElementById('download');
     const downloadWhiteBgButton = document.getElementById('download-white-bg');
     const errorMessage = document.getElementById('error-message');
+    const colorPicker = document.getElementById('colorPicker');
+    const penSize = document.getElementById('penSize');
     let drawing = false;
+
 
     function startDrawing(e) {
         drawing = true;
@@ -19,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function draw(e) {
         if (!drawing) return;
-        ctx.lineWidth = 2;
+        ctx.lineWidth = penSize.value;
         ctx.lineCap = 'round';
-        ctx.strokeStyle = '#000000';
+        ctx.strokeStyle = colorPicker.value;
 
         const rect = canvas.getBoundingClientRect();
         ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clearError();
     });
 
+
     downloadButton.addEventListener('click', () => {
         clearError();
         if (isCanvasEmpty()) {
@@ -74,13 +78,14 @@ document.addEventListener("DOMContentLoaded", function() {
             showError('Please draw your signature');
             return;
         }
+        
         const tempCanvas = document.createElement('canvas');
         const tempCtx = tempCanvas.getContext('2d');
 
         tempCanvas.width = canvas.width;
         tempCanvas.height = canvas.height;
 
-        
+       
         tempCtx.fillStyle = '#ffffff';
         tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
 
@@ -95,3 +100,4 @@ document.addEventListener("DOMContentLoaded", function() {
         link.click();
     });
 });
+
