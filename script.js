@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
             showError('Please draw your signature');
             return;
         }
-        
+
         const tempCanvas = document.createElement('canvas');
         const tempCtx = tempCanvas.getContext('2d');
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const dataURL = tempCanvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.href = dataURL;
-        link.download = 'signature_with_white_bg.png';
+        link.download = 'signature.jpg';
         link.click();
     });
 });

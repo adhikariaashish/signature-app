@@ -1,28 +1,33 @@
+*{
+    font-family: cursive;
+}
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #b7b7b7;
     font-family: Arial, sans-serif;
 }
 .container {
     text-align: center;
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 canvas {
-    border: 1px solid #000;
+    border: 2px solid #000;
     cursor: crosshair;
+    border-radius: 8px;
 }
 .controls {
     margin: 10px 0;
 }
 .error-message {
     color: red;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 10px;
     display: none;
@@ -31,18 +36,34 @@ canvas {
     margin-top: 10px;
 }
 button {
-    margin: 0 5px;
+    margin: 0 10px;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
 }
-#clear {
-    background-color: #ff4b5c;
-    color: white;
+
+#clear{
+    background-color: white;
+    color: rgb(237, 33, 33);
+    border :1px solid rgb(237, 33, 33); 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 #download, #download-white-bg{
-    background-color: #4caf50;
-    color: white;
+background-color:white ;
+color: rgb(54, 184, 3);
+border: 1px solid rgb(54, 184, 3);
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#clear:hover{
+background-color: rgb(237, 33, 33);
+color: white;
+}
+#download:hover, #download-white-bg:hover{
+background-color: rgb(54, 184, 3);
+color:white ;
+
 }
